@@ -1,0 +1,58 @@
+{
+	"info": {
+		"_postman_id": "44371589-4d4a-4db7-9be5-a23366554f11",
+		"name": "GitHub jobs api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "get python jobs",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "c1e3a737-ef8b-4dae-99a1-9c508a6843b6",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://jobs.github.com/positions.json?description=python&full_time=true&location=sf",
+					"protocol": "https",
+					"host": [
+						"jobs",
+						"github",
+						"com"
+					],
+					"path": [
+						"positions.json"
+					],
+					"query": [
+						{
+							"key": "description",
+							"value": "python"
+						},
+						{
+							"key": "full_time",
+							"value": "true"
+						},
+						{
+							"key": "location",
+							"value": "sf"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
